@@ -1,0 +1,49 @@
+{% extends "./base.html" %} {% block content %}
+
+<!-- create header using bootstrap with components are rigt aligned such as - login and signup buttons -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">ASB ERP</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Create Search field right aligned -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <form class="form-inline">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>    
+    
+    <!-- create navbar with right aligned -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <!-- create button of bootstrap -->
+        <a class="nav-item nav-link" href="{{ url_for('auth.login') }}">
+          <button type="button" id="login" class="btn btn-dark">Login</button>
+        </a>
+        <a class="nav-item nav-link" href="{{ url_for('auth.signup') }}">
+          <button type="button" id="signup" class="btn btn-primary">Signup</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{% endblock %}
