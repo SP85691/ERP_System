@@ -24,12 +24,12 @@ def signup_post():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # check if user exits
-        user = User.query.filter_by(email=email).first()
+        # # check if user exits
+        # user = User.query.filter_by(email=email).first()
 
-        if user:
-            flash('Email address already exists')
-            return redirect(url_for('auth.signup'))
+        # if user:
+        #     flash('Email address already exists')
+        #     return redirect(url_for('auth.signup'))
 
         # add user to database
         new_user = User(username=username, email=email, password=generate_password_hash(password, method='sha256'))
