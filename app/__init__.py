@@ -1,16 +1,17 @@
-from flask import Flask
+from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-import sqlite3
 
 db = SQLAlchemy()
+
+DB_NAME = "data.db"
 
 def create_app():
 
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = 'PJaM5IXGtHYS0Uqki8mdYnnjsI92iQHq'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db_users.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
     db.init_app(app)
 
@@ -30,5 +31,8 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
+    # apply session on database
+    with app.app_context():
+        db.create_all()
+                
     return app
-    

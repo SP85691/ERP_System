@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename=('css/hero.css'))}}">
+<section class="section">
+<div class="d-sm-flex align-items-center justify-content-between w-100" style="height: 100vh;">
+    <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
+      <span class="text-secondary text-uppercase">Dreamworkers Presents</span>
+      <h1 class="display-4 my-4 font-weight-bold">COLLEGE <br><span style="color: #FF6219;">ERP SYSTEM</span></h1>
+      <a href="#" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #FF6219;">Get Started</a>
+    </div>
+    <!-- in mobile remove the clippath -->
+    <div class="col-md-8 h-100 clipped" style="min-height: 350px; background-image: url(https://imageio.forbes.com/specials-images/imageserve/5ea7961952ac2e00060ddf62/Which-ERP-Systems-Are-The-Most-Popular-With-Their-Users-in-2020/960x0.jpg?format=jpg&width=960); background-position: center; background-size: cover;">
+  
+    </div>
+  </div>     
+</section>
+
+
+{% endblock %}
