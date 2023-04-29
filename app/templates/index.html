@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-    <!-- include header here -->
-    {% include "components/header.html" %}
+{% include "components/header.html" %}
+<div style="margin-top: 4.5%;">
+    {% include "components/hero.html" %}
+</div>
+<div style="height: 130vh;">
+    {% include "components/service.html" %}
+</div>
+{% include "components/about_section.html" %}
+
+{% include "components/footer.html" %}
 
 {% endblock %}

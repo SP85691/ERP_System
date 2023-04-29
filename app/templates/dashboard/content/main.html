@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename=('css/side_nav.css'))}}"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{url_for('static', filename=('js/side_nav.js'))}}"></script>
+
+<section>
+  {% include 'dashboard/sidenav.html' %}
+
+  <!-- Page Content -->
+  <div class="page-content p-5" id="content">
+    <!-- Toggle Button -->
+    <button
+      class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+      id="sidebarCollapse"
+      type="button"
+    >
+      <i class="fa fa-bars mr-2"></i>
+      <small class="text-uppercase font-weight-bold">Toggle</small>
+    </button>
+
+    <nav aria-label="breadcrumb" class="rounded-3 px-1 mb-4">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="{{url_for('main.dashboard')}}">Dashboard</a></li>
+        <!-- <li class="breadcrumb-item"><a href="{{url_for('main.about')}}">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li> -->
+      </ol>
+    </nav>
+
+    <!-- Demo Content -->
+    <h2 class="display-4 text-white">Bootstrap Vertical Nav</h2>
+    <p class="lead text-white mb-0">
+      A vertical navigation menu with dropdown sub-menus using Bootstrap 4.
+    </p>
+    <div class="separator"></div>
+    
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="row text-white">
+      <div class="col-lg-7">
+        <p class="lead">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+          recusandae suscipit esse ab, voluptas quasi nulla beatae perspiciatis
+          atque quaerat sunt ipsum earum aut reiciendis architecto
+          necessitatibus illo error culpa! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Aut obcaecati blanditiis libero. Vel
+          accusantium iure dolorem quas esse mollitia omnis dolorum, aliquid
+          animi perferendis unde modi eveniet consequatur praesentium veritatis.
+        </p>
+
+        <p class="lead">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+          quaerat quis alias harum voluptates necessitatibus illum aut excepturi
+          qui, aperiam dicta vero reiciendis nostrum animi consequuntur!
+          Temporibus nesciunt dolore magnam! Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Possimus vel a consequuntur similique
+          error nulla officia dolorem impedit atque inventore earum, sequi
+          eveniet maiores. Accusamus illum voluptate ab dolorum? Animi!
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <p class="lead">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+          recusandae suscipit esse ab, voluptas quasi nulla beatae perspiciatis
+          atque quaerat sunt ipsum earum aut reiciendis architecto
+          necessitatibus illo error culpa! Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Aut obcaecati blanditiis libero. Vel
+          accusantium iure dolorem quas esse mollitia omnis dolorum, aliquid
+          animi perferendis unde modi eveniet consequatur praesentium veritatis.
+        </p>
+
+        <p class="lead">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+          quaerat quis alias harum voluptates necessitatibus illum aut excepturi
+          qui, aperiam dicta vero reiciendis nostrum animi consequuntur!
+          Temporibus nesciunt dolore magnam! Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Possimus vel a consequuntur similique
+          error nulla officia dolorem impedit atque inventore earum, sequi
+          eveniet maiores. Accusamus illum voluptate ab dolorum? Animi!
+        </p>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+{% endblock %}

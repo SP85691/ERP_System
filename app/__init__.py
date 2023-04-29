@@ -1,10 +1,12 @@
 from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+import os
 
 db = SQLAlchemy()
 
-DB_NAME = "data.db"
+DB_NAME = "user_database.db"
+Mail_Pass = os.environ.get('Mail_Auth_Pass')
 
 def create_app():
 

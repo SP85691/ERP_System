@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename=('css/about_section.css'))}}">
+<section class="section" style="background-color: #fff2ec;">
+<div class="d-sm-flex align-items-center justify-content-between w-100" style="height: 100vh;">
+    <div class="col-md-8 h-100 clips" style="min-height: 350px; background-image: url(https://cdn.shopify.com/s/files/1/0070/7032/files/editing-image-sizes.png?format=jpg&quality=90&v=1581621967); background-position: left; background-size:contain; background-repeat: no-repeat;">
+  
+    </div>
+    <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
+        <!-- <span class="text-secondary text-uppercase">Dreamworkers Presents</span> -->
+        <h1 class="display-4 my-4" style="font-size: 20px; font-weight: 500; font-family: 'Poppins' sans-serif; margin: 10px;">DreamWorkers offers innovative web development, AI tools, and data science freelancing solutions. 
+        Our skilled team delivers efficient and effective results to enhance your online presence.</h1><br>
+        <a href="#" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px; background-color: #FF6219;">Know More!</a>
+    </div>
+    <!-- in mobile remove the clippath -->
+  </div>     
+</section>
+
+
+{% endblock %}

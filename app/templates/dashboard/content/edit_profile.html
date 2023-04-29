@@ -1,0 +1,231 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename=('css/side_nav.css'))}}"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{url_for('static', filename=('js/side_nav.js'))}}"></script>
+
+<section>
+  {% include 'dashboard/sidenav.html' %}
+
+    <!-- Page Content -->
+    <div class="page-content p-5" id="content">
+        <!-- Toggle Button -->
+        <button
+          class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+          id="sidebarCollapse"
+          type="button"
+        >
+          <i class="fa fa-bars mr-2"></i>
+          <small class="text-uppercase font-weight-bold">Toggle</small>
+        </button>
+    
+        <!-- Demo Content -->
+        <nav aria-label="breadcrumb" class="rounded-3 px-1 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item">
+              <a href="{{url_for('main.dashboard')}}">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{url_for('main.about')}}">User</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+          </ol>
+        </nav>
+    
+        <section style="background-color: #fff; border-radius: 20px">
+          <div class="container py-5">
+            <div class="row">
+              <div class="col"></div>
+              <div class="container">             
+                  <div class="col">
+                    <div class="row">
+                      <div class="col mb-3">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="e-profile">
+                              <div class="row">
+                                <div class="col-12 col-sm-auto mb-3">
+                                  <div class="mx-auto" style="width: 140px;">
+                                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                                      <!-- <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span> -->
+                                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt=""  style="width: 130px;">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                  <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{name}}</h4>
+                                    <p class="mb-0">@{{username}}</p>
+                                    <div class="text-muted">Profile</div>
+                                    <div class="mt-2">
+                                        <!-- on click of the button file explorer will open to select jpg file -->
+                                      <input class="btn btn-primary inputfile" name="file" placeholder="Choose a Photo" type="file"
+                                        style="width: auto">
+                                    </input>
+                                    </div>
+                                  </div>
+                                  <div class="text-center text-sm-right">
+                                    <span class="badge badge-secondary">administrator</span>
+                                    <div class="text-muted"><small>Joined {{created_at}}</small></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <ul class="nav nav-tabs">
+                                <li class="nav-item"><a href="" class="active nav-link">Personal</a></li>&nbsp;
+                              </ul>
+                              <div class="tab-content pt-3">
+                                <div class="tab-pane active">
+                                  <form class="form" method="POST">
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="row">
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>Full Name</label>
+                                              <input class="form-control" type="text" name="name" placeholder="John Smith" value="{{name}}">
+                                            </div>
+                                          </div>
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>Username</label>
+                                              <input class="form-control" type="text" name="username" placeholder="johnny.s" value="{{username}}">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>Email</label>
+                                                <input class="form-control" type="text" placeholder="{{email}}" disabled value="{{email}}">
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>Mobile Number</label>
+                                                <input class="form-control" type="number" name="phone" placeholder="Enter You Mobile No." maxlength="10" value="{{phone}}">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        <div class="mb-2"><b>Address</b></div>
+                                        <div class="row">
+                                          <div class="col mb-3">
+                                            <div class="form-group">
+                                              <label>House No.</label>
+                                                <input class="form-control" type="text" name="h_no" placeholder="House No." value="{{h_no}}">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>City</label>
+                                                <input class="form-control" type="text" name="city" placeholder="New Delhi" value="{{city}}">
+                                              </div>
+                                            </div>
+                                            <div class="col">
+                                              <div class="form-group">
+                                                <label>State</label>
+                                                <input class="form-control" type="text" name="state" placeholder="Delhi" value="{{state}}">
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-12 col-sm-6 mb-3">
+                                        <div class="mb-2"><b>Change Password</b></div>
+                                        <div class="row">
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>Current Password</label>
+                                              <input class="form-control" type="password" placeholder="••••••">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>New Password</label>
+                                              <input class="form-control" type="password" placeholder="••••••">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col">
+                                            <div class="form-group">
+                                              <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                              <input class="form-control" type="password" placeholder="••••••"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                                        <div class="mb-2"><b>Keeping in Touch</b></div>
+                                        <div class="row">
+                                          <div class="col">
+                                            <label>Email Notifications</label>
+                                            <div class="custom-controls-stacked px-2">
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                                <label class="custom-control-label" for="notifications-blog">Blog posts</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                                <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                                                <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col d-flex justify-content-end">
+                                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="col-12 col-md-3 mb-3">
+                        <div class="card mb-3">
+                          <div class="card-body">
+                            <div class="px-xl-3">
+                              <button class="btn btn-block btn-secondary">
+                                <i class="fa fa-sign-out"></i>
+                                <span>Logout</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title font-weight-bold">Support</h6>
+                            <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                            <button type="button" class="btn btn-primary">Contact Us</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                  </div>
+                </div>
+                </div>
+            </div>
+
+
+</section>
+{% endblock %}

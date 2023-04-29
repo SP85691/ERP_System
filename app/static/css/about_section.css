@@ -2,22 +2,24 @@
 
 body {
   font-family: "Poppins", sans-serif !important;
+  
 }
 
 .headline {
-  left: 100px;
+  left: 30px;
 } 
 
 /* clipped come from right to left */
-.clipped {
-  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+.clips {
+  clip-path: polygon(1% 0, 100% 50%, 80% 100%, 0% 100%);
+
 }
 
 @media screen and (max-width: 650px){
   .headline {
     left: 20px;
   } 
-  .clipped {
+  .clips {
     clip-path: none;
     max-height: 300px !important;
   }

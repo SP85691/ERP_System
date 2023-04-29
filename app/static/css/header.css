@@ -1,3 +1,16 @@
+/* import google fonts (size: 400, 600, 700, 800, 900) poppins*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700,800,900&display=swap');
+
+/* import font awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css');
+
+/* import bootstrap */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+
+/* import bootstrap datepicker */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css');
+
+
 body {
     margin: 0;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -18,6 +31,12 @@ body {
     justify-content: space-between;
     padding: 5px;
 }
+
+.navbar .container .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+} 
 
 /*
 headeer top
@@ -161,7 +180,7 @@ li {
 }
 
 .mx-background-top-linear {
-    background: -webkit-linear-gradient(45deg, #ff6219 48%, #1b1e21 48%);
-    background: -webkit-linear-gradient(left, #ff6219 48%, #1b1e21 48%);
-    background: linear-gradient(45deg, #ff6219 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(45deg, #FF6219 48%, #1b1e21 48%);
+    background: -webkit-linear-gradient(left, #FF6219 48%, #1b1e21 48%);
+    background: linear-gradient(45deg, #FF6219 48%, #1b1e21 48%);
 }

@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+
+<link rel="stylesheet" href="{{url_for('static', filename=('css/side_nav.css'))}}">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+      <div class="media d-flex align-items-center">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
+         alt="..." class="mr-3 rounded-circle img-thumbnail shadow-sm"
+         style="height: 80px; width: 80px;">
+         <div class="media-body">
+            <h4 class="m-0">{{name}}</h4>
+            <p class="font-weight-light text-muted mb-0">Web Developer</p>
+         </div>
+      </div>
+    </div>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="{{url_for('main.dashboard')}}" class="nav-link text-dark bg-light">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+            Overview
+          </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{url_for('main.about')}}" class="nav-link text-dark">
+                <i class="fa-solid fa-address-card text-primary fa-fw"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                About
+            </a>
+        </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark">
+          <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+          Projects
+        </a>
+      </li>
+    </ul>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Actions</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark">
+          <i class="fa fa-calendar mr-3 text-primary fa-fw"></i>
+          Calendar
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark">
+          <i class="fa fa-cog mr-3 text-primary fa-fw"></i>
+          Settings
+        </a>
+      </li>
+      <!-- create a dropdown section -->
+        <li class="nav-item">
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link text-dark">
+                <i class="fa fa-user mr-3 text-primary fa-fw"></i>
+                User
+            </a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="{{url_for('main.about')}}" class="nav-link text-dark" style="padding-left: 20px;">Profile</a>
+                </li>
+                <li>
+                    <a href="{{url_for('auth.edit_profile')}}" class="nav-link text-dark" style="padding-left: 20px;">Edit Profile</a>
+                </li>
+                <li>
+                    <a href="{{url_for('auth.logout')}}" class="nav-link text-dark" style="padding-left: 20px;">Logout</a>
+                </li>
+            </ul>
+
+        <!-- set log button in the bottom -->
+        <li class="nav-item">
+        <div class="nav-link text-dark bottom">
+            <a href="{{url_for('auth.logout')}}" class="btn btn-danger btn-lg btn-block">Logout</a>
+        </li>
+    </ul>
+  </div>
+
+{% endblock %}
