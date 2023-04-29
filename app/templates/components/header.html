@@ -10,7 +10,7 @@
           <!-- social icon-->
           <div class="col-sm-12">
             <ul class="social-network">
-              <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="waves-effect waves-dark" href="https://www.youtube.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
               <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-linkedin"></i></a></li>
               <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-pinterest"></i></a></li>
@@ -23,7 +23,9 @@
   </header>
   <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
     <div class="container">
-      <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> ERP SYSTEM </a>
+      <a class="navbar-brand" href="{{ url_for('main.index') }}" style="text-transform: uppercase; color: white;">
+        <img src="{{ url_for('static', filename=('img/logo1.png')) }}" class="img-fluid" alt="logo" style="border-radius: 10px; height: 60px; width: 220px;">
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,7 +33,7 @@
 
         <ul class="navbar-nav ml-auto">
 
-          <li class="nav-item active">
+          <li class="nav-item active" onclick="$()">
             <a class="nav-link" href="{{url_for('main.index')}}">Home
               <span class="sr-only">(current)</span>
             </a>
@@ -47,7 +49,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{{ url_for('main.contact') }}">Contact</a>
           </li>
 
           {% if not current_user.is_authenticated %}
@@ -73,6 +75,10 @@
   </nav>
 </div>
 
+
+<script>
+
+</script>
 {% endblock %}
 
 

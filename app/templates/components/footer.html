@@ -11,7 +11,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="cta-text">
                             <h4>Find us</h4>
-                            <span>1010 Avenue, sw 54321, chandigarh</span>
+                            <span>Noida Sector-125, Uttar Pradesh</span>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         <i class="fas fa-phone"></i>
                         <div class="cta-text">
                             <h4>Call us</h4>
-                            <span>9876543210 0</span>
+                            <span>+91 85120 68247</span>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <i class="far fa-envelope-open"></i>
                         <div class="cta-text">
                             <h4>Mail us</h4>
-                            <span>mail@info.com</span>
+                            <span>suryapratap8562@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -40,11 +40,13 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                            <a href="{{ url_for('main.index') }}">
+                                <img src="{{ url_for('static', filename=('img/logo1.png')) }}" class="img-fluid" alt="logo"
+                                style="border-radius: 10px;">
+                            </a>
                         </div>
                         <div class="footer-text">
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
-                            elit,Lorem ipsum dolor sit amet.</p>
+                            <p style="justify-content: center;">DreamWorkers offers innovative web development, AI tools, and data science freelancing solutions. Our skilled team delivers efficient and effective results to enhance your online presence.</p>
                         </div>
                         <div class="footer-social-icon">
                             <span>Follow us</span>
@@ -62,7 +64,7 @@
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">about</a></li>
-                            <li><a href="#">services</a></li>
+                            <li><a href="{{ url_for('components', )}}">services</a></li>
                             <li><a href="#">portfolio</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">About us</a></li>
@@ -83,7 +85,7 @@
                         </div>
                         <div class="subscribe-form">
                             <form action="#">
-                                <input type="text" placeholder="Email Address">
+                                <input type="email" placeholder="Email Address">
                                 <button><i class="fab fa-telegram-plane"></i></button>
                             </form>
                         </div>
@@ -97,7 +99,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                     <div class="copyright-text">
-                        <p>Copyright &copy; 2018, All Right Reserved <a href="https://codepen.io/anupkumar92/">Anup</a></p>
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="https://github.com/SP85691">Surya Pratap</a></p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
